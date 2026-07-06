@@ -10,9 +10,9 @@ const ChurchButton = ({ text = "Plan Your Visit", onClick, variants }) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onClick={onClick}
-      className='group relative flex gap-3 justify-center items-center text-xs md:text-base lg:text-xl font-["matter"] px-4 py-3 md:px-5 md:py-4 lg:px-7 lg:py-3 rounded-full cursor-pointer appearance-none outline-none'
+      className='group relative flex gap-2 lg:gap-3 justify-center items-center text-xs md:text-base lg:text-xl font-["matter"] px-4 py-3 md:px-5 md:py-4 lg:px-7 lg:py-3 rounded-full cursor-pointer appearance-none outline-none'
     >
-      <span className="absolute inset-0 rounded-full border border-[#9CAF88]"></span>
+      <span className="absolute inset-0 rounded-full border-2 border-[#9CAF88]"></span>
       <span
         className="absolute inset-0 rounded-full border-2 border-[#758467]
                [clip-path:inset(0_100%_0_0)]
@@ -31,7 +31,7 @@ const ChurchButton = ({ text = "Plan Your Visit", onClick, variants }) => {
           transition={{
             type: "spring",
             stiffness: 300,
-            damping: 12,
+            damping: 18,
           }}
           className="bg-[#758467] rounded-full p-2 flex justify-center items-center"
         >
@@ -49,8 +49,8 @@ const ChurchButton = ({ text = "Plan Your Visit", onClick, variants }) => {
         </motion.div>
       </div>
       {/* Mobile Screen */}
-      <div className="lg:hidden w-5 h-5 md:w-7 md:h-7 flex justify-center items-center bg-[#758467] text-white rounded-full">
-          <ArrowUpRight className="scale-[0.6]" />
+      <div className="lg:hidden w-4 h-4 md:w-7 md:h-7 flex justify-center items-center bg-[#758467] text-white rounded-full">
+          <ArrowUpRight className="scale-[0.5]" />
       </div>
     </motion.button>
   );

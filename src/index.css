@@ -1,1 +1,26 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Rochester&display=swap");
+
+@font-face {
+  font-family: "matter";
+  src: url("/fonts/matter-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "halimun";
+  src: url("/fonts/Halimun.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "against";
+  src: url("/fonts/against-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
