@@ -24,3 +24,20 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "cinzel_decorative";
+  src: url("/fonts/CinzelDecorative-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}

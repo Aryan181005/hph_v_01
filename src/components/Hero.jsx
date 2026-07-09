@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ChurchButton from "../components/ChurchButton";
 
@@ -22,8 +22,23 @@ const Hero = () => {
     },
   };
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  },[])
+
   return (
-    <div className="h-screen flex flex-col gap-10 justify-center items-center lg:p-20">
+    <motion.div
+      initial={{ height: "100vh"}}
+      animate={{ height: isMobile ? "50vh" : "100vh"}}
+      transition={{ delay: 2, duration: 1.3, ease: "easeInOut"}}
+      className="flex flex-col gap-10 justify-center items-center lg:mt-10"
+    >
       <motion.div
         variants={container}
         initial="hidden"
@@ -68,7 +83,7 @@ const Hero = () => {
           />
         </motion.div>
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
