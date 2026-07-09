@@ -26,6 +26,14 @@
 }
 
 @font-face {
+  font-family: "rochester";
+  src: url("/fonts/Rochester-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "cinzel_decorative";
   src: url("/fonts/CinzelDecorative-Regular.ttf") format("truetype");
   font-weight: 400;
