@@ -1,5 +1,12 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Rochester&display=swap");
+
+@theme {
+  --font-cinzel: "cinzel_decorative", serif;
+  --font-rochester: "rochester";
+  --font-against: "against";
+  --font-halimun: "halimun";
+  --font-matter: "matter";
+}
 
 @font-face {
   font-family: "matter";

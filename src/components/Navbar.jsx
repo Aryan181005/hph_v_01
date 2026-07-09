@@ -75,16 +75,15 @@ const Navbar = () => {
               {navlinks.map((nav, idx) => (
                 <Link key={nav.path} to={nav.path}>
                   <motion.div
-                    initial={{ scale: 0.95 }}
+                    initial={{ scale: 0.97 }}
                     whileHover={{
                       scale: 1,
                     }}
                     transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 15,
+                      duration: 0.2,
+                      ease: "easeInOut"
                     }}
-                    className="relative group text-xl lg:text-3xl text-[#68775B] font-['matter'] leading-15 lg:leading-20"
+                    className="relative group text-xl lg:text-3xl text-[#68775B] font-matter leading-15 lg:leading-20"
                   >
                     <span className="absolute inset-0 border-b-2 border-[#68775B]/60" />
                     {nav.label}

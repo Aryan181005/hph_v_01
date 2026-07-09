@@ -13,7 +13,7 @@ const Footer = () => {
       <hr className="text-stone-400/50 h-10 border-t-2 max-w-[92vw] mx-auto lg:mt-20" />
       <div className="flex flex-col justify-center items-center">
         <div className="lg:w-[50vw] text-center flex flex-col gap-7 justify-center items-center">
-          <h2 className="text-3xl lg:text-5xl font-['brush_script_mt'] text-[#758467]">
+          <h2 className="text-xl lg:text-3xl font-['halimun'] text-[#758467]">
             Hebron Prayer Hall
           </h2>
           {/* Contact */}
@@ -24,7 +24,7 @@ const Footer = () => {
             >
               <PhoneIcon size={20} />
               <p className="hidden md:block">+91 12345 67890</p>
-              <p className="">Call Us</p>
+              <p className="md:hidden">Call Us</p>
             </a>
 
             <div className="h-5 w-px bg-gray-400" />
@@ -35,11 +35,11 @@ const Footer = () => {
             >
               <MailIcon size={20} />
               <p className="hidden md:block">info@yourchurch.org</p>
-              <p className="">Mail Your Query</p>
+              <p className="md:hidden">Mail Your Query</p>
             </a>
           </div>
           {/* CopyRight */}
-          <p className="font-['matter'] text-stone-600 text-[11px] md:text-xs lg:text-sm">
+          <p className="font-matter text-stone-600 text-[11px] md:text-xs lg:text-sm">
             &copy; 2026 Hebron Prayer Hall. All Rights Reserved
           </p>
 
@@ -47,7 +47,7 @@ const Footer = () => {
           <div className="w-[80vw] lg:w-[40vw] mb-10 flex flex-col items-center text-[#434C3A]">
             <motion.button
               onClick={() => setOpen(!open)}
-              className="w-2/5 lg:w-1/5 border-b-2 border-[#758467]/40 px-1 pb-2 lg:mb-5 text-xs md:text-sm font-['matter'] flex justify-between items-center overflow-hidden"
+              className="w-2/5 lg:w-1/5 border-b-2 border-[#758467]/40 px-1 pb-2 lg:mb-5 text-xs md:text-sm font-matter flex justify-between items-center overflow-hidden"
             >
               <p>Legal Notice</p>
               {/* Arrow Icon */}
@@ -79,7 +79,7 @@ const Footer = () => {
                       ease: "easeInOut",
                     },
                   }}
-                  className="font-['matter'] text-red-500 text-[11px] lg:text-sm mb-10 text-left"
+                  className="font-matter text-red-500 text-[11px] lg:text-sm mb-10 text-left"
                 >
                   The life and message of Jesus Christ, together with the
                   teachings of the Bible, are intended for everyone. Our

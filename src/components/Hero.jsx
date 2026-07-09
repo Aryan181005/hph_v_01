@@ -48,22 +48,22 @@ const Hero = () => {
         {/* Hero Welcome Section */}
         <motion.p
           variants={items}
-          className='text-xs md:text-xl lg:text-3xl font-["halimun"] font-light tracking-wider'
+          className='text-xs md:text-xl lg:text-3xl font-halimun font-light tracking-wider'
         >
           Welcome to
         </motion.p>
         <motion.h1
           variants={items}
-          className='text-2xl md:text-6xl lg:text-8xl font-["against"] text-center'
+          className='text-2xl md:text-6xl lg:text-8xl font-against text-center'
         >
           Hebron Prayer Hall
         </motion.h1>
         <motion.p
           variants={items}
-          className='text-[0.8rem] md:text-[1.3rem] lg:text-[1.6rem] font-["matter"] text-[#758467] tracking-widest'
+          className='text-[0.8rem] md:text-[1.3rem] lg:text-[1.6rem] font-matter text-[#758467] tracking-widest'
         >
           Touching lives through the{" "}
-          <span className='font-["rochester"] text-[#758467]'>
+          <span className='font-rochester text-[#758467]'>
             living word of God
           </span>
         </motion.p>

@@ -10,7 +10,7 @@ const ChurchButton = ({ text = "Plan Your Visit", onClick, variants }) => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       onClick={onClick}
-      className='group relative flex gap-2 lg:gap-3 justify-center items-center text-xs md:text-base lg:text-xl font-["matter"] px-4 py-3 md:px-5 md:py-4 lg:px-7 lg:py-3 rounded-full cursor-pointer appearance-none outline-none'
+      className='group relative flex gap-2 lg:gap-3 justify-center items-center text-xs md:text-base lg:text-xl font-matter px-4 py-3 md:px-5 md:py-4 lg:px-7 lg:py-3 rounded-full cursor-pointer appearance-none outline-none'
     >
       <span className="absolute inset-0 rounded-full border-2 border-[#9CAF88]"></span>
       <span

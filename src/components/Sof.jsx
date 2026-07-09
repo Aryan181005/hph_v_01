@@ -20,7 +20,7 @@ const Dialogue = ({ sof, setSof }) => {
           {/* Dialogue Box */}
           <motion.div
             layoutId={`sof-${sof.id}`}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-5 lg:gap-7 w-[90%] max-w-5xl max-h-[80vh] overflow-auto scrollbar-hide z-50 text-[#5a674f] bg-linear-to-b from-[#ffe7b8] to-[#FFFDF8] p-8 lg:p-15 font-['matter'] rounded-4xl"
+            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-5 lg:gap-7 w-[90%] max-w-5xl max-h-[80vh] overflow-auto scrollbar-hide z-50 text-[#5a674f] bg-linear-to-b from-[#ffe7b8] to-[#FFFDF8] p-8 lg:p-15 font-matter rounded-4xl"
           >
             <h2 className="text-xl lg:text-4xl font-semibold">{sof.title}</h2>
             {sof.description && (
@@ -70,10 +70,10 @@ const Sof = () => {
 
   return (
     <div className="max-w-[90vw] mx-auto mt-20">
-      <h2 className="font-['cinzel_decorative'] text-2xl md:text-5xl lg:text-7xl text-center text-[#68775B] tracking-wider">
+      <h2 className="font-cinzel text-2xl md:text-5xl lg:text-7xl text-center text-[#68775B] tracking-wider">
         Statement of Faith
       </h2>
-      <p className="font-['rochester'] text-md md:text-xl lg:text-3xl text-center text-[#758467] mt-1 lg:mt-5 tracking-widest">
+      <p className="font-rochester text-md md:text-xl lg:text-3xl text-center text-[#758467] mt-1 lg:mt-5 tracking-widest">
         our tenets of faith and doctrine
       </p>
       <div className="lg:mt-20">
@@ -84,7 +84,7 @@ const Sof = () => {
               onClick={() =>
                 setOpenId(openId === category.id ? null : category.id)
               }
-              className="relative w-full flex justify-between items-center p-5 cursor-pointer font-['matter'] text-lg md:text-xl lg:text-2xl mt-8 md:mt-12 lg:mt-15 text-[#5D6A51]"
+              className="relative w-full flex justify-between items-center p-5 cursor-pointer font-matter text-lg md:text-xl lg:text-2xl mt-8 md:mt-12 lg:mt-15 text-[#5D6A51]"
             >
               <motion.span className="absolute inset-y-1 inset-x-5 border-b-2 border-[#758467] opacity-50" />
               {/* Title */}
@@ -121,7 +121,7 @@ const Sof = () => {
                   }}
                   className="overflow-hidden"
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:text-xs md:text-sm lg:text-base gap-5 mt-10 m-2 font-['matter'] text-[#505B45]">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:text-xs md:text-sm lg:text-base gap-5 mt-10 m-2 font-matter text-[#505B45]">
                     {category.items.map((beliefs) => (
                       <motion.div
                         key={beliefs.id}
