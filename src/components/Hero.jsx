@@ -22,6 +22,7 @@ const Hero = () => {
     },
   };
 
+  // Decrease Hero Height on Mobiles
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {

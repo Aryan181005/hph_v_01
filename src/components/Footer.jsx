@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <>
-      <hr className="text-stone-400/50 h-10 border-t-2 max-w-[92vw] mx-auto lg:mt-20" />
+      <hr className={`text-stone-400/50 h-10 border-t-2 max-w-[92vw] mx-auto mt-20`} />
       <div className="flex flex-col justify-center items-center">
         <div className="lg:w-[50vw] text-center flex flex-col gap-7 justify-center items-center">
           <h2 className="text-xl lg:text-3xl font-['halimun'] text-[#758467]">

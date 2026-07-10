@@ -20,9 +20,14 @@ const Dialogue = ({ sof, setSof }) => {
           {/* Dialogue Box */}
           <motion.div
             layoutId={`sof-${sof.id}`}
+            transition={{
+              type: "spring",
+              stiffness: 110,
+              damping: 14,
+            }}
             className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-5 lg:gap-7 w-[90%] max-w-5xl max-h-[80vh] overflow-auto scrollbar-hide z-50 text-[#5a674f] bg-linear-to-b from-[#ffe7b8] to-[#FFFDF8] p-8 lg:p-15 font-matter rounded-4xl"
           >
-            <h2 className="text-xl lg:text-4xl font-semibold">{sof.title}</h2>
+            <h2 className="text-lg md:text-xl lg:text-4xl font-semibold">{sof.title}</h2>
             {sof.description && (
               <>
                 <p className="text-xs lg:text-base">{sof.description}</p>
@@ -35,7 +40,7 @@ const Dialogue = ({ sof, setSof }) => {
             )}
             {sof.sections?.map((section, idx) => (
               <div key={section.heading} className="flex flex-col gap-5">
-                <h2 className="text-md lg:text-2xl font-semibold">
+                <h2 className="text-base lg:text-2xl font-semibold">
                   {section.heading}
                 </h2>
                 {section.description && (
@@ -68,23 +73,58 @@ const Sof = () => {
   const [sof, setSof] = useState(null);
   const [openId, setOpenId] = useState(null);
 
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 },
+    },
+  };
+  const items = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.5,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+
   return (
-    <div className="max-w-[90vw] mx-auto mt-20">
-      <h2 className="font-cinzel text-2xl md:text-5xl lg:text-7xl text-center text-[#68775B] tracking-wider">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="visible"
+      className="max-w-[90vw] mx-auto mt-20"
+    >
+      <motion.h2
+        variants={items}
+        className="font-cinzel text-2xl md:text-5xl lg:text-7xl text-center text-[#68775B] tracking-wider"
+      >
         Statement of Faith
-      </h2>
-      <p className="font-rochester text-md md:text-xl lg:text-3xl text-center text-[#758467] mt-1 lg:mt-5 tracking-widest">
+      </motion.h2>
+      <motion.p
+        variants={items}
+        className="font-rochester text-md md:text-xl lg:text-3xl text-center text-[#758467] mt-1 lg:mt-5 tracking-widest"
+      >
         our tenets of faith and doctrine
-      </p>
-      <div className="lg:mt-20">
+      </motion.p>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="visible"
+        className="lg:mt-20"
+      >
         {statements.map((category) => (
-          <div key={category.id} className="lg:w-[70vw] mx-auto">
+          <motion.div variants={items} key={category.id} className="lg:w-[70vw] mx-auto">
             {/* Accordian */}
             <motion.button
               onClick={() =>
                 setOpenId(openId === category.id ? null : category.id)
               }
-              className="relative w-full flex justify-between items-center p-5 cursor-pointer font-matter text-lg md:text-xl lg:text-2xl mt-8 md:mt-12 lg:mt-15 text-[#5D6A51]"
+              className="relative w-full flex justify-between items-center p-5 cursor-pointer font-matter text-sm md:text-lg lg:text-2xl mt-8 md:mt-12 lg:mt-15 text-[#5D6A51]"
             >
               <motion.span className="absolute inset-y-1 inset-x-5 border-b-2 border-[#758467] opacity-50" />
               {/* Title */}
@@ -121,7 +161,7 @@ const Sof = () => {
                   }}
                   className="overflow-hidden"
                 >
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:text-xs md:text-sm lg:text-base gap-5 mt-10 m-2 font-matter text-[#505B45]">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 m-2 font-matter text-[#505B45]">
                     {category.items.map((beliefs) => (
                       <motion.div
                         key={beliefs.id}
@@ -129,7 +169,7 @@ const Sof = () => {
                         whileHover="hover"
                         initial="rest"
                         onClick={() => setSof(beliefs)}
-                        className="relative p-10 h-25 flex items-center justify-center cursor-pointer"
+                        className="relative p-8 lg:p-10 text-xs md:text-sm lg:text-base flex items-center justify-center cursor-pointer"
                       >
                         {/* Border Hover Animation */}
                         <motion.span
@@ -151,12 +191,12 @@ const Sof = () => {
                 </motion.div>
               )}
             </AnimatePresence>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <Dialogue sof={sof} setSof={setSof} />
-    </div>
+    </motion.div>
   );
 };
 
